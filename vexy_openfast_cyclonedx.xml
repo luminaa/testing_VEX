@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ns0:bom
+	xmlns:ns0="http://cyclonedx.org/schema/bom/1.4" serialNumber="urn:uuid:1c242312-8ff8-4878-b6a8-5bec9e2ac1aa" version="1">
+	<ns0:metadata>
+		<ns0:timestamp>2023-10-27T16:05:17.322872+00:00</ns0:timestamp>
+		<ns0:tools>
+			<ns0:tool>
+				<ns0:vendor>CycloneDX</ns0:vendor>
+				<ns0:name>cyclonedx-python-lib</ns0:name>
+				<ns0:version>4.0.0</ns0:version>
+				<ns0:externalReferences>
+					<ns0:reference type="build-system">
+						<ns0:url>https://github.com/CycloneDX/cyclonedx-python-lib/actions</ns0:url>
+					</ns0:reference>
+					<ns0:reference type="distribution">
+						<ns0:url>https://pypi.org/project/cyclonedx-python-lib/</ns0:url>
+					</ns0:reference>
+					<ns0:reference type="documentation">
+						<ns0:url>https://cyclonedx.github.io/cyclonedx-python-lib/</ns0:url>
+					</ns0:reference>
+					<ns0:reference type="issue-tracker">
+						<ns0:url>https://github.com/CycloneDX/cyclonedx-python-lib/issues</ns0:url>
+					</ns0:reference>
+					<ns0:reference type="license">
+						<ns0:url>https://github.com/CycloneDX/cyclonedx-python-lib/blob/main/LICENSE</ns0:url>
+					</ns0:reference>
+					<ns0:reference type="release-notes">
+						<ns0:url>https://github.com/CycloneDX/cyclonedx-python-lib/blob/main/CHANGELOG.md</ns0:url>
+					</ns0:reference>
+					<ns0:reference type="vcs">
+						<ns0:url>https://github.com/CycloneDX/cyclonedx-python-lib</ns0:url>
+					</ns0:reference>
+					<ns0:reference type="website">
+						<ns0:url>https://cyclonedx.org</ns0:url>
+					</ns0:reference>
+				</ns0:externalReferences>
+			</ns0:tool>
+			<ns0:tool>
+				<ns0:vendor>Vexy</ns0:vendor>
+				<ns0:name>vexy</ns0:name>
+				<ns0:version>0.3.1</ns0:version>
+				<ns0:externalReferences>
+					<ns0:reference type="build-system">
+						<ns0:url>https://github.com/madpah/vexy/actions</ns0:url>
+					</ns0:reference>
+					<ns0:reference type="distribution">
+						<ns0:url>https://pypi.org/project/vexy/</ns0:url>
+					</ns0:reference>
+					<ns0:reference type="documentation">
+						<ns0:url>https://vexy.readthedocs.io/</ns0:url>
+					</ns0:reference>
+					<ns0:reference type="issue-tracker">
+						<ns0:url>https://github.com/madpah/vexy/issues</ns0:url>
+					</ns0:reference>
+					<ns0:reference type="license">
+						<ns0:url>https://github.com/madpah/vexy/blob/main/LICENSE</ns0:url>
+					</ns0:reference>
+					<ns0:reference type="release-notes">
+						<ns0:url>https://github.com/madpah/vexy/blob/main/CHANGELOG.md</ns0:url>
+					</ns0:reference>
+					<ns0:reference type="vcs">
+						<ns0:url>https://github.com/madpah/vexy</ns0:url>
+					</ns0:reference>
+				</ns0:externalReferences>
+			</ns0:tool>
+		</ns0:tools>
+	</ns0:metadata>
+</ns0:bom>

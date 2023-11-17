@@ -22,5 +22,3 @@ case "$format" in
         exit 1
         ;;
 esac
-
-echo "Trivy scan completed for $image with format $format. Results saved to $output_file."

@@ -10,11 +10,17 @@ input=$2
 
 # extract name from input
 extract_app_name() {
-    if [[ "$1" =~ / ]]; then
-        echo "${1##*/}"
+    local name
+    if [[ "$1" =~ ^https://github.com/ ]]; then
+        # Extract repository name from GitHub URL
+        name=$(basename "$1")
+    elif [[ "$1" =~ / ]]; then
+        # Extract image name from Docker image
+        name="${1##*/}"
     else
-        echo "$1"
+        name="$1"
     fi
+    echo "${name//:/_}"
 }
 
 app_name=$(extract_app_name "$input")

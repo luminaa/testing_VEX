@@ -12,10 +12,8 @@ input=$2
 extract_app_name() {
     local name
     if [[ "$1" =~ ^https://github.com/ ]]; then
-        # Extract repository name from GitHub URL
         name=$(basename "$1")
     elif [[ "$1" =~ / ]]; then
-        # Extract image name from Docker image
         name="${1##*/}"
     else
         name="$1"

@@ -28,8 +28,7 @@ run_trivy() {
     local input_value=$2
     local output_file="${output_file_base}_${input_type}.txt"
 
-    trivy "$input_type" "$input_value" -o "$output_file" -f "$format" --ignore-unfixed false
-    grep -v "FIXED" "$output_file" > "${output_file_base}_not_fixed_${input_type}.txt"
+    trivy "$input_type" "$input_value" -o "$output_file" -f "$format" --ignore-status false
 }
 
 case "$format" in

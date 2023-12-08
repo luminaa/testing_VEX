@@ -38,17 +38,17 @@ run_trivy() {
     local input_type=$1
     local input_value=$2
     local output_ext="txt"
-    [ "$format" == "cyclonedx" ] && output_ext="json"
+    [ "$format" == "cyclonedx" ] || [ "$format" == "json" ] && output_ext="json"
     local output_file="trivy_output_${app_name}_${format}.${output_ext}"
 
     trivy "$input_type" "$input_value" -o "$output_file" -f "$format" --ignore-status fixed
 }
 
 case "$format" in
-    "table"|"cyclonedx")
+    "table"|"cyclonedx"|"json")
         ;;
     *)
-        echo "Invalid format. Supported formats: table, cyclonedx"
+        echo "Invalid format. Supported formats: table, cyclonedx, json"
         exit 1
         ;;
 esac

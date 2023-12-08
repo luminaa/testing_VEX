@@ -8,27 +8,40 @@ fi
 format=$1
 input=$2
 
-output_file_base="trivy_output_${format}"
+# extract name from input
+extract_app_name() {
+    if [[ "$1" =~ / ]]; then
+        echo "${1##*/}"
+    else
+        echo "$1"
+    fi
+}
 
-# Function to check if input is a Docker image
+app_name=$(extract_app_name "$input")
+
+# check if input is a Docker image
 is_docker_image() {
     docker image inspect "$1" > /dev/null 2>&1
     echo "Is Docker Image: $?"  # debugging
     return $?
 }
 
-# Function to check if input is a GitHub repo
+# check if input is a GitHub repo
 is_github_repo() {
-    [[ $1 =~ ^https://github\.com/ ]]
+    [[ $1 =~ ^https://github.com/ ]]
+    echo "Is GitHub Repo: $?"  # debugging
+    return $?
 }
 
-# Function to run Trivy and filter for not fixed vulnerabilities
+# run Trivy and output to file
 run_trivy() {
     local input_type=$1
     local input_value=$2
-    local output_file="${output_file_base}_${input_type}.txt"
+    local output_ext="txt"
+    [ "$format" == "cyclonedx" ] && output_ext="json"
+    local output_file="trivy_output_${app_name}_${format}.${output_ext}"
 
-    trivy "$input_type" "$input_value" -o "$output_file" -f "$format" --ignore-status false
+    trivy "$input_type" "$input_value" -o "$output_file" -f "$format" --ignore-unfixed false
 }
 
 case "$format" in

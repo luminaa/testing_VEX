@@ -41,7 +41,7 @@ run_trivy() {
     [ "$format" == "cyclonedx" ] && output_ext="json"
     local output_file="trivy_output_${app_name}_${format}.${output_ext}"
 
-    trivy "$input_type" "$input_value" -o "$output_file" -f "$format" --ignore-unfixed false
+    trivy "$input_type" "$input_value" -o "$output_file" -f "$format" --ignore-status fixed
 }
 
 case "$format" in

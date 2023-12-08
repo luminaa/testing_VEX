@@ -13,6 +13,8 @@ output_file_base="trivy_output_${format}"
 # Function to check if input is a Docker image
 is_docker_image() {
     docker image inspect "$1" > /dev/null 2>&1
+    echo "Is Docker Image: $?"  # debugging
+    return $?
 }
 
 # Function to check if input is a GitHub repo
